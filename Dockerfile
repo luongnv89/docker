@@ -18,5 +18,7 @@ CMD "echo" "I am CMD"
 
 # ENTRYPOINT
 # Usage: ENTRYPOINT application "argument","argument"
+ENTRYPOINT echo
+CMD "Hello docker"
 
 RUN echo "DONE!"
