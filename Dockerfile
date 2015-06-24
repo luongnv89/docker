@@ -20,5 +20,14 @@ CMD "echo" "I am CMD"
 # Usage: ENTRYPOINT application "argument","argument"
 ENTRYPOINT echo
 CMD "Hello docker"
+ENTRYPOINT echo
+
+# ENV
+# Usage: ENV key value
+ENV MYNAME Luong
+ENV MYEMAIL luongnv89@gmail.com
+
+RUN echo $MYNAME
+RUN echo $MYEMAIL
 
 RUN echo "DONE!"
