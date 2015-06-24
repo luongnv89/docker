@@ -18,9 +18,9 @@ CMD "echo" "I am CMD"
 
 # ENTRYPOINT
 # Usage: ENTRYPOINT application "argument","argument"
-ENTRYPOINT echo
-CMD "Hello docker"
-ENTRYPOINT echo
+# ENTRYPOINT echo
+# CMD "Hello docker"
+# ENTRYPOINT echo
 
 # ENV
 # Usage: ENV key value
@@ -29,5 +29,9 @@ ENV MYEMAIL luongnv89@gmail.com
 
 RUN echo $MYNAME
 RUN echo $MYEMAIL
+
+# EXPOSE
+# Usage: EXPOSE [port]
+EXPOSE 8080
 
 RUN echo "DONE!"
