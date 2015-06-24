@@ -12,4 +12,11 @@ RUN echo "Copied a file"
 ADD tools/ /tools/
 RUN echo "Copied a folder"
 
+# CMD
+# Usage: CMD "application" "argument", "argument"
+CMD "echo" "I am CMD"
+
+# ENTRYPOINT
+# Usage: ENTRYPOINT application "argument","argument"
+
 RUN echo "DONE!"
