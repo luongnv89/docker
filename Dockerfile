@@ -41,7 +41,10 @@ USER luongnv89
 
 # VOLUME
 # Usage: VOLUME ["/dir_1","dir_2",...]
-VOLUME ["~/projects","~/Downloads"]
+#VOLUME ["~/projects","~/Downloads"]
 
+# WORKDIR
+# Usage: WORKDIR /path
+WORKDIR tools/
 
 RUN echo "DONE!"
