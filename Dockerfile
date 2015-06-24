@@ -36,6 +36,7 @@ EXPOSE 8080
 
 # USER
 # Usage: USER [UID]
+RUN useradd testuser
 USER testuser
 
 RUN echo "DONE!"
