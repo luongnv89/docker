@@ -34,4 +34,8 @@ RUN echo $MYEMAIL
 # Usage: EXPOSE [port]
 EXPOSE 8080
 
+# USER
+# Usage: USER [UID]
+USER testuser
+
 RUN echo "DONE!"
