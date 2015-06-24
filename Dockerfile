@@ -36,7 +36,12 @@ EXPOSE 8080
 
 # USER
 # Usage: USER [UID]
-RUN useradd testuser
-USER testuser
+RUN useradd luongnv89
+USER luongnv89
+
+# VOLUME
+# Usage: VOLUME ["/dir_1","dir_2",...]
+VOLUME ["~/projects","~/Downloads"]
+
 
 RUN echo "DONE!"
