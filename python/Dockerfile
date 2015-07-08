@@ -5,13 +5,16 @@ FROM ubuntu
 
 MAINTAINER Luong Nguyen, <luongnv89@gmail.com>
 
-ENV RTC_TAG minimum
+ENV RTC_TAG python
 
 # Update system
 RUN apt-get update -y
 
 # First message
 RUN echo '*********************************\n*\tReadyToCode environment\n*\tUbuntu: '`uname -a`'\n*\tVersion/Tag: '$RTC_TAG'\n************************************"'
+
+# MINIMUM
+
 
 # Install github - code version control
 RUN apt-get install -y git
@@ -21,6 +24,10 @@ RUN apt-get install -y vim
 
 # Install wget - downloader for Unix terminal
 RUN apt-get install -y wget
+
+# PYTHON
+# Config to use python3 as default interpret
+RUN echo "alias python=python3">>~/.bash_aliases
 
 # Set workspace - where to start working
 WORKDIR workspace/
@@ -66,4 +73,4 @@ WORKDIR workspace/
 # WORKDIR
 # Usage: WORKDIR /path
 
-RUN echo '*********************************\n*\tThe ReadyToCode environment '$RTC_TAG' is installed sucessfully!\n* git: '`git --version`'\n* vim: '`vi -version`'\n******************************************'
+RUN echo '*********************************\n*\tThe ReadyToCode environment "$RTC_TAG" is installed sucessfully!\n* git: '`git --version`'\n* vim: '`vi -version`'\n* python: '`python -V`'\n******************************************'
