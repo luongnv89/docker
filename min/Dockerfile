@@ -19,6 +19,9 @@ RUN apt-get install -y git
 # Install vim - editor
 RUN apt-get install -y vim
 
+# Install wget - downloader for Unix terminal
+RUN apt-get install -y wget
+
 # Set workspace - where to start working
 WORKDIR workspace/
 
