@@ -11,7 +11,7 @@ ENV RTC_TAG minimum
 RUN apt-get update -y
 
 # First message
-RUN echo '*********************************\n*\tA ReadyToCode environment based on Ubuntu:'`uname -a`'\n*\tVersion/Tag: '$RTC_TAG'\n*\tIncludes: git, vim\n************************************"'
+RUN echo '*********************************\n*\tReadyToCode environment\n*\tUbuntu: '`uname -a`'\n*\tVersion/Tag: '$RTC_TAG'\n*\tIncludes: git, vim\n************************************"'
 
 # Install github - code version control
 RUN apt-get install -y git
