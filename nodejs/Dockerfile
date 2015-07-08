@@ -25,7 +25,7 @@ RUN apt-get install -y wget
 # INSTALL NODEJS + NPM
 
 RUN apt-get install -y nodejs npm
-
+RUN ln -s `which nodejs` /usr/bin/node
 
 # Set workspace - where to start working
 WORKDIR workspace/
