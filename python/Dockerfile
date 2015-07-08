@@ -73,4 +73,4 @@ WORKDIR workspace/
 # WORKDIR
 # Usage: WORKDIR /path
 
-RUN echo '*********************************\n*\tThe ReadyToCode environment "$RTC_TAG" is installed sucessfully!\n* git: '`git --version`'\n* vim: '`vi -version`'\n* python: '`python -V`'\n******************************************'
+RUN echo '*********************************\n*\tThe ReadyToCode environment '$RTC_TAG' is installed sucessfully!\n* git: '`git --version`'\n* vim: '`vi -version`'\n* python: '`python -V`'\n******************************************'
