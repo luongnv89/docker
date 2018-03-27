@@ -22,15 +22,20 @@ RUN apt-get install -y vim
 # Install wget - downloader for Unix terminal
 RUN apt-get install -y wget
 
+# Install curl - downloader for Unix terminal
+RUN apt-get install -y curl
+
 # INSTALL NODEJS + NPM
 
-RUN apt-get install -y nodejs npm
-RUN ln -s `which nodejs` /usr/bin/node
+RUN curl -sL https://deb.nodesource.com/setup_9.x -o nodesource_setup.sh
+RUN bash nodesource_setup.sh
+RUN apt-get install -y nodejs
+RUN apt-get install -y build-essential
 
 # Set workspace - where to start working
 WORKDIR workspace/
 
-# ADD 
+# ADD
 # Usage: Add [source directory or URL] [destination directory]
 # ADD README.md /mydata/README.md
 # RUN echo "Copied a file"
@@ -75,5 +80,5 @@ RUN echo '*********************************\n*\tThe ReadyToCode environment '$RT
 RUN echo '\n* git: '`git --version`
 RUN echo '\n* vim: '`vi -version`
 RUN echo '\n* nodejs: '`node -v`
-RUN echo '\n* vim: '`npm -v`
+RUN echo '\n* npm: '`npm -v`
 RUN echo '\n******************************************'
