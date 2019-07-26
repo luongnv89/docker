@@ -3,8 +3,6 @@
 # Based on Ubuntu:14.04
 FROM ubuntu
 
-MAINTAINER Luong Nguyen, <luongnv89@gmail.com>
-
 ENV RTC_TAG nodejs
 
 # Update system
@@ -23,17 +21,16 @@ RUN apt-get install -y vim
 RUN apt-get install -y wget
 
 # Install curl - downloader for Unix terminal
-RUN apt-get install -y curl
+RUN apt-get install -y curl software-properties-common
 
 # INSTALL NODEJS + NPM
 
-RUN curl -sL https://deb.nodesource.com/setup_9.x -o nodesource_setup.sh
+RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install -y nodejs
-RUN apt-get install -y build-essential
 
 # Set workspace - where to start working
-WORKDIR workspace/
+WORKDIR /workspace/
 
 # ADD
 # Usage: Add [source directory or URL] [destination directory]
