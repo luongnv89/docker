@@ -5,13 +5,16 @@ FROM ubuntu
 
 MAINTAINER Luong Nguyen, <luongnv89@gmail.com>
 
-ENV RTC_TAG minimum
+ENV RTC_TAG python
 
 # Update system
 RUN apt-get update -y
 
 # First message
-RUN echo '*********************************\n*\tReadyToCode environment\n*\tUbuntu: '`uname -a`'\n*\tVersion/Tag: '$RTC_TAG'\n************************************'
+RUN echo '*********************************\n*\tReadyToCode environment\n*\tUbuntu: '`uname -a`'\n*\tVersion/Tag: '$RTC_TAG'\n************************************"'
+
+# MINIMUM
+
 
 # Install github - code version control
 RUN apt-get install -y git
@@ -21,6 +24,17 @@ RUN apt-get install -y vim
 
 # Install wget - downloader for Unix terminal
 RUN apt-get install -y wget
+
+# PYTHON
+# Config to use python3 as default interpret
+RUN echo "alias python=python3">>~/.bash_aliases
+
+# MONGODB
+RUN apt-get install -y apt-transport-https software-properties-common
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+RUN echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+RUN apt-get -y update
+RUN apt-get install -y mongodb-org
 
 # Set workspace - where to start working
 WORKDIR workspace/
@@ -66,4 +80,4 @@ WORKDIR workspace/
 # WORKDIR
 # Usage: WORKDIR /path
 
-RUN echo '*********************************\n*\tThe ReadyToCode environment '$RTC_TAG' is installed sucessfully!\n* git: '`git --version`'\n* vim: '`vi -version`'\n******************************************'
+RUN echo '*********************************\n*\tThe ReadyToCode environment '$RTC_TAG' is installed sucessfully!\n* git: '`git --version`'\n* vim: '`vi -version`'\n* python: '`python -V`'\n******************************************'

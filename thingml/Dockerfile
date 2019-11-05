@@ -22,6 +22,10 @@ RUN apt-get install -y vim
 # Install wget - downloader for Unix terminal
 RUN apt-get install -y wget
 
+# Install java
+RUN apt-get install -y openjdk-8-jdk
+RUN apt-get install -y openjdk-8-jre
+
 # Set workspace - where to start working
 WORKDIR workspace/
 
