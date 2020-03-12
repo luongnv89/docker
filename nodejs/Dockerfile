@@ -21,13 +21,12 @@ RUN apt-get install -y vim
 RUN apt-get install -y wget
 
 # Install curl - downloader for Unix terminal
-RUN apt-get install -y curl software-properties-common
+apt update -y
 
 # INSTALL NODEJS + NPM
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
-RUN bash nodesource_setup.sh
-RUN apt-get install -y nodejs
+RUN apt install nodejs -y
+RUN apt install npm -y
 
 # Set workspace - where to start working
 WORKDIR /workspace/
